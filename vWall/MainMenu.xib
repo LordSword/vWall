@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SDMenuManager" customModule="vWall" customModuleProvider="target">
+            <connections>
+                <outlet property="menu" destination="HQR-mr-jlg" id="Dq2-xh-LT3"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu id="HQR-mr-jlg">
+            <items>
+                <menuItem title="选择视频" id="B2Z-fZ-pkR">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="chooseVideo:" target="-2" id="lmC-0P-C0P"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="退出" id="S45-nG-aa8">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitChicked:" target="-2" id="Q5s-zO-VEl"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-192" y="56"/>
+        </menu>
+    </objects>
+</document>
