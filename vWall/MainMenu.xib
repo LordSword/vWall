@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SDMenuManager" customModule="vWall" customModuleProvider="target">
             <connections>
+                <outlet property="bootItem" destination="630-qa-pu1" id="miX-Tt-Jum"/>
                 <outlet property="menu" destination="HQR-mr-jlg" id="Dq2-xh-LT3"/>
             </connections>
         </customObject>
@@ -16,12 +17,21 @@
         <menu id="HQR-mr-jlg">
             <items>
                 <menuItem title="选择视频" id="B2Z-fZ-pkR">
+                    <attributedString key="attributedTitle"/>
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="chooseVideo:" target="-2" id="lmC-0P-C0P"/>
                     </connections>
                 </menuItem>
+                <menuItem title="开机启动" id="630-qa-pu1">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="bootClicked:" target="-2" id="Kas-oF-g27"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="gVb-71-Vlr"/>
                 <menuItem title="退出" id="S45-nG-aa8">
+                    <attributedString key="attributedTitle"/>
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="quitChicked:" target="-2" id="Q5s-zO-VEl"/>

@@ -8,13 +8,24 @@
 import Cocoa
 
 class SDMenuManager: NSObject {
-    
+    // 单例
     static let shared = SDMenuManager()
+    // 属性
     var statusIcon: NSStatusItem?
+    // xib属性
     @IBOutlet weak var menu: NSMenu!
+    @IBOutlet weak var bootItem: NSMenuItem!
+    // 懒加载
+    lazy var playerManager = {
+        return SDPlayerWindowManager(windowNibName: "PlayerWindow")
+    }()
+    
+    override init() {
+        super.init()
+        _ = Bundle.main.loadNibNamed("MainMenu", owner: self, topLevelObjects: nil)
+    }
     
     func openStatusIcon() {
-        _ = Bundle.main.loadNibNamed("MainMenu", owner: self, topLevelObjects: nil)
         
         let image = NSImage(named: "vWall")
         image?.isTemplate = true
@@ -36,18 +47,16 @@ class SDMenuManager: NSObject {
         dialog.allowsMultipleSelection = false;
         dialog.canChooseDirectories = false;
 
-        if (.OK == dialog.runModal()) {
-
-            if let result = dialog.url {
-                let path = result.path
-                
-                
-                
-                print(path)
-            }
-        } else {
+        guard .OK == dialog.runModal() else {
             // 有妖气，快闪
+            return
         }
+        
+        playerManager.playVideo(dialog.url)
+    }
+    
+    @IBAction func bootClicked(_ sender: NSMenuItem) {
+        
     }
     
     @IBAction func quitChicked(_ sender: NSMenuItem) {
