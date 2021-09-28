@@ -7,6 +7,7 @@
 
 import Cocoa
 import AVKit
+import CoreGraphics
 
 class SDPlayerWindowManager: NSWindowController {
 
@@ -22,7 +23,8 @@ class SDPlayerWindowManager: NSWindowController {
         window?.makeKeyAndOrderFront(self)
         window?.delegate = self
         window?.ignoresMouseEvents = true
-        window?.level = NSWindow.Level(rawValue: NSWindow.Level.RawValue(kCGBackstopMenuLevel))
+        window?.level = NSWindow.Level(rawValue: NSWindow.Level.RawValue(CGWindowLevelForKey(.desktopWindow)))
+        window?.orderBack(self)
         window?.setFrame(NSScreen.main?.frame ?? NSMakeRect(0, 0, 0, 0), display: true, animate: false)
     
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
