@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50310A49270357450098DC2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50310A48270357450098DC2F /* AppDelegate.swift */; };
+		50310A4D270357450098DC2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50310A4C270357450098DC2F /* Assets.xcassets */; };
+		50310A692703578A0098DC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50310A682703578A0098DC2F /* Main.storyboard */; };
+		50310A8027035E8B0098DC2F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50310A7F27035E8B0098DC2F /* ServiceManagement.framework */; };
+		50310A8C270364C50098DC2F /* vWallBootHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50310A46270357450098DC2F /* vWallBootHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		50386A8227009F4700486C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50386A8127009F4700486C99 /* AppDelegate.swift */; };
 		50386A8627009F4700486C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50386A8527009F4700486C99 /* Assets.xcassets */; };
 		50386A9527009F4700486C99 /* vWallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50386A9427009F4700486C99 /* vWallTests.swift */; };
@@ -35,7 +40,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		50310A8B2703648A0098DC2F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				50310A8C270364C50098DC2F /* vWallBootHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		50310A46270357450098DC2F /* vWallBootHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vWallBootHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50310A48270357450098DC2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		50310A4C270357450098DC2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50310A51270357450098DC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50310A52270357450098DC2F /* vWallBootHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vWallBootHelper.entitlements; sourceTree = "<group>"; };
+		50310A682703578A0098DC2F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		50310A7F27035E8B0098DC2F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		50386A7E27009F4700486C99 /* vWall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vWall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50386A8127009F4700486C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50386A8527009F4700486C99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,10 +80,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		50310A43270357450098DC2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50386A7B27009F4700486C99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50310A8027035E8B0098DC2F /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,13 +112,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50310A47270357450098DC2F /* vWallBootHelper */ = {
+			isa = PBXGroup;
+			children = (
+				50310A48270357450098DC2F /* AppDelegate.swift */,
+				50310A4C270357450098DC2F /* Assets.xcassets */,
+				50310A682703578A0098DC2F /* Main.storyboard */,
+				50310A51270357450098DC2F /* Info.plist */,
+				50310A52270357450098DC2F /* vWallBootHelper.entitlements */,
+			);
+			path = vWallBootHelper;
+			sourceTree = "<group>";
+		};
+		50310A7E27035E8B0098DC2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50310A7F27035E8B0098DC2F /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		50386A7527009F4700486C99 = {
 			isa = PBXGroup;
 			children = (
 				50386A8027009F4700486C99 /* vWall */,
+				50310A47270357450098DC2F /* vWallBootHelper */,
 				50386A9327009F4700486C99 /* vWallTests */,
 				50386A9E27009F4700486C99 /* vWallUITests */,
 				50386A7F27009F4700486C99 /* Products */,
+				50310A7E27035E8B0098DC2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +150,7 @@
 				50386A7E27009F4700486C99 /* vWall.app */,
 				50386A9027009F4700486C99 /* vWallTests.xctest */,
 				50386A9B27009F4700486C99 /* vWallUITests.xctest */,
+				50310A46270357450098DC2F /* vWallBootHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +192,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		50310A45270357450098DC2F /* vWallBootHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50310A53270357450098DC2F /* Build configuration list for PBXNativeTarget "vWallBootHelper" */;
+			buildPhases = (
+				50310A42270357450098DC2F /* Sources */,
+				50310A43270357450098DC2F /* Frameworks */,
+				50310A44270357450098DC2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vWallBootHelper;
+			productName = vWallBootHelper;
+			productReference = 50310A46270357450098DC2F /* vWallBootHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 		50386A7D27009F4700486C99 /* vWall */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50386AA427009F4700486C99 /* Build configuration list for PBXNativeTarget "vWall" */;
@@ -143,6 +216,7 @@
 				50386A7A27009F4700486C99 /* Sources */,
 				50386A7B27009F4700486C99 /* Frameworks */,
 				50386A7C27009F4700486C99 /* Resources */,
+				50310A8B2703648A0098DC2F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -198,6 +272,9 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					50310A45270357450098DC2F = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					50386A7D27009F4700486C99 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -225,6 +302,7 @@
 			projectRoot = "";
 			targets = (
 				50386A7D27009F4700486C99 /* vWall */,
+				50310A45270357450098DC2F /* vWallBootHelper */,
 				50386A8F27009F4700486C99 /* vWallTests */,
 				50386A9A27009F4700486C99 /* vWallUITests */,
 			);
@@ -232,6 +310,15 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		50310A44270357450098DC2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50310A4D270357450098DC2F /* Assets.xcassets in Resources */,
+				50310A692703578A0098DC2F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50386A7C27009F4700486C99 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +346,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		50310A42270357450098DC2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50310A49270357450098DC2F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50386A7A27009F4700486C99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +397,50 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		50310A54270357450098DC2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = vWallBootHelper/vWallBootHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PZYD6XBB8W;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = vWallBootHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SD.vWallBootHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		50310A55270357450098DC2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = vWallBootHelper/vWallBootHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PZYD6XBB8W;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = vWallBootHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SD.vWallBootHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		50386AA227009F4700486C99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -432,7 +571,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SD.vWall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdf.vWall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -453,7 +592,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SD.vWall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdf.vWall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -546,6 +685,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		50310A53270357450098DC2F /* Build configuration list for PBXNativeTarget "vWallBootHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50310A54270357450098DC2F /* Debug */,
+				50310A55270357450098DC2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		50386A7927009F4700486C99 /* Build configuration list for PBXProject "vWall" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

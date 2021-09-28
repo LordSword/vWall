@@ -26,8 +26,6 @@ class SDPlayerWindowManager: NSWindowController {
         window?.level = NSWindow.Level(rawValue: NSWindow.Level.RawValue(CGWindowLevelForKey(.desktopWindow)))
         window?.orderBack(self)
         window?.setFrame(NSScreen.main?.frame ?? NSMakeRect(0, 0, 0, 0), display: true, animate: false)
-    
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
     
     func playVideo(_ url: URL?) {
@@ -39,7 +37,7 @@ class SDPlayerWindowManager: NSWindowController {
         showWindow(self)
         
         stopVideo()
-        
+                
         let player = AVPlayer(url: url!)
         playerView.player = player
         

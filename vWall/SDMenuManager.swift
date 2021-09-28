@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 class SDMenuManager: NSObject {
     // 单例
@@ -14,11 +15,27 @@ class SDMenuManager: NSObject {
     var statusIcon: NSStatusItem?
     // xib属性
     @IBOutlet weak var menu: NSMenu!
-    @IBOutlet weak var bootItem: NSMenuItem!
+    @IBOutlet weak var bootItem: NSMenuItem! {
+        didSet {
+            bootItem.state = bootOpened ? .on:.off
+        }
+    }
     // 懒加载
     lazy var playerManager = {
         return SDPlayerWindowManager(windowNibName: "PlayerWindow")
     }()
+    // 计算属性
+    var bootOpened:Bool {
+        set {
+            UserDefaults.standard.set(newValue, forKey: "bootDidOpened")
+            UserDefaults.standard.synchronize()
+            
+            bootItem.state = newValue ? .on:.off
+        }
+        get {
+            return UserDefaults.standard.bool(forKey: "bootDidOpened")
+        }
+    }
     
     override init() {
         super.init()
@@ -34,6 +51,10 @@ class SDMenuManager: NSObject {
         statusIcon?.button?.image = image
         
         statusIcon?.menu = menu
+        
+        if let url = UserDefaults.standard.url(forKey: "com.userSelected.url") {
+            openVideo(url)
+        }
     }
     
     @IBAction func chooseVideo(_ sender: NSMenuItem) {
@@ -52,15 +73,33 @@ class SDMenuManager: NSObject {
             return
         }
         
-        playerManager.playVideo(dialog.url)
+        openVideo(dialog.url)
     }
     
     @IBAction func bootClicked(_ sender: NSMenuItem) {
-        
+                        
+        if SMLoginItemSetEnabled( "SD.vWallBootHelper" as CFString, !bootOpened) {
+            
+            bootOpened = !bootOpened
+        }
     }
     
     @IBAction func quitChicked(_ sender: NSMenuItem) {
         
         NSApplication.shared.terminate(sender)
+    }
+}
+
+extension SDMenuManager {
+    
+    func openVideo(_ url: URL?) {
+        guard nil != url else {
+            return
+        }
+        
+        playerManager.playVideo(url)
+        
+        UserDefaults.standard.set(url, forKey: "com.userSelected.url")
+        UserDefaults.standard.synchronize()
     }
 }
