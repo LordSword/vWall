@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5021F80427040D7900C77944 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5021F80327040D7900C77944 /* AVKit.framework */; };
 		50310A49270357450098DC2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50310A48270357450098DC2F /* AppDelegate.swift */; };
 		50310A4D270357450098DC2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50310A4C270357450098DC2F /* Assets.xcassets */; };
 		50310A692703578A0098DC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50310A682703578A0098DC2F /* Main.storyboard */; };
-		50310A8027035E8B0098DC2F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50310A7F27035E8B0098DC2F /* ServiceManagement.framework */; };
-		50310A8C270364C50098DC2F /* vWallBootHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50310A46270357450098DC2F /* vWallBootHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		50386A8227009F4700486C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50386A8127009F4700486C99 /* AppDelegate.swift */; };
 		50386A8627009F4700486C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50386A8527009F4700486C99 /* Assets.xcassets */; };
 		50386A9527009F4700486C99 /* vWallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50386A9427009F4700486C99 /* vWallTests.swift */; };
 		50386AA027009F4700486C99 /* vWallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50386A9F27009F4700486C99 /* vWallUITests.swift */; };
 		50386AB42700A8B100486C99 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50386AB32700A8B100486C99 /* MainMenu.xib */; };
 		50386AB92700A92300486C99 /* SDMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50386AB82700A92300486C99 /* SDMenuManager.swift */; };
+		506B94D027040C6700A330DC /* vWallBootHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50310A46270357450098DC2F /* vWallBootHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		506B94D127040C8A00A330DC /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50310A7F27035E8B0098DC2F /* ServiceManagement.framework */; };
 		50D4A9212701E9BE00F74763 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D4A9202701E9BE00F74763 /* main.swift */; };
 		50D4A92C2701EC3200F74763 /* PlayerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D4A92B2701EC3200F74763 /* PlayerWindow.xib */; };
 		50D4A9342701ECBA00F74763 /* SDPlayerWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D4A9332701ECBA00F74763 /* SDPlayerWindowManager.swift */; };
@@ -47,13 +48,14 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				50310A8C270364C50098DC2F /* vWallBootHelper.app in CopyFiles */,
+				506B94D027040C6700A330DC /* vWallBootHelper.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5021F80327040D7900C77944 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		50310A46270357450098DC2F /* vWallBootHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vWallBootHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50310A48270357450098DC2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50310A4C270357450098DC2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50310A8027035E8B0098DC2F /* ServiceManagement.framework in Frameworks */,
+				5021F80427040D7900C77944 /* AVKit.framework in Frameworks */,
+				506B94D127040C8A00A330DC /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +130,7 @@
 		50310A7E27035E8B0098DC2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5021F80327040D7900C77944 /* AVKit.framework */,
 				50310A7F27035E8B0098DC2F /* ServiceManagement.framework */,
 			);
 			name = Frameworks;
@@ -358,10 +362,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50386AB92700A92300486C99 /* SDMenuManager.swift in Sources */,
-				50D4A9342701ECBA00F74763 /* SDPlayerWindowManager.swift in Sources */,
 				50D4A9212701E9BE00F74763 /* main.swift in Sources */,
 				50386A8227009F4700486C99 /* AppDelegate.swift in Sources */,
+				50386AB92700A92300486C99 /* SDMenuManager.swift in Sources */,
+				50D4A9342701ECBA00F74763 /* SDPlayerWindowManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

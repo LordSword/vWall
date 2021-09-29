@@ -52,8 +52,15 @@ class SDMenuManager: NSObject {
         
         statusIcon?.menu = menu
         
-        if let url = UserDefaults.standard.url(forKey: "com.userSelected.url") {
-            openVideo(url)
+        if let data = UserDefaults.standard.data(forKey: "com.userSelected.url") {
+            
+            var bookmarkDataIsStale = true
+            let url = try? URL(resolvingBookmarkData: data, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &bookmarkDataIsStale)
+            if url?.startAccessingSecurityScopedResource() ?? false {
+                
+                self.openVideo(url)
+                url?.stopAccessingSecurityScopedResource()
+            }
         }
     }
     
@@ -99,7 +106,9 @@ extension SDMenuManager {
         
         playerManager.playVideo(url)
         
-        UserDefaults.standard.set(url, forKey: "com.userSelected.url")
-        UserDefaults.standard.synchronize()
+        if let data = try? url?.bookmarkData(options: .securityScopeAllowOnlyReadAccess, includingResourceValuesForKeys: nil, relativeTo: nil) {
+            UserDefaults.standard.set(data, forKey: "com.userSelected.url")
+            UserDefaults.standard.synchronize()
+        }
     }
 }

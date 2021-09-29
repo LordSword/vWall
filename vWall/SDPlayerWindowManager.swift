@@ -7,15 +7,12 @@
 
 import Cocoa
 import AVKit
-import CoreGraphics
 
 class SDPlayerWindowManager: NSWindowController {
 
-    @IBOutlet weak var playerView: AVPlayerView! {
-        didSet {
-            playerView.controlsStyle = .none
-        }
-    }
+    var observer: Any?
+    
+    @IBOutlet weak var playerView: AVPlayerView!
     
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -28,6 +25,13 @@ class SDPlayerWindowManager: NSWindowController {
         window?.setFrame(NSScreen.main?.frame ?? NSMakeRect(0, 0, 0, 0), display: true, animate: false)
     }
     
+    deinit {
+        
+        if let tmp = observer {
+            NotificationCenter.default.removeObserver(tmp)
+        }
+    }
+    
     func playVideo(_ url: URL?) {
                 
         guard nil != url else {
@@ -37,12 +41,20 @@ class SDPlayerWindowManager: NSWindowController {
         showWindow(self)
         
         stopVideo()
+        
+        if nil == observer {
+            observer = NotificationCenter.default.addObserver(forName:.AVPlayerItemDidPlayToEndTime, object:nil, queue:nil, using: { [weak self] notify in
                 
+                self?.playerView.player?.seek(to: .zero)
+                self?.playerView.player?.play()
+            })
+        }
+        
         let player = AVPlayer(url: url!)
-        playerView.player = player
+        self.playerView.player = player
+        player.volume = 0
         
         player.play()
-        player.volume = 0
     }
     
     func stopVideo() {
@@ -62,3 +74,4 @@ extension SDPlayerWindowManager: NSWindowDelegate {
         stopVideo()
     }
 }
+
